@@ -2,7 +2,7 @@
 FROM morehousej09/base
 
 # initialize the java machine that we need 
-RUN apt-get install -y openjdk-6-jre wget libcurl3 curl make
+RUN apt-get install -y openjdk-6-jre wget libcurl3 curl make openjdk-6-jdk maven
 
 # now initialize all of the dependencies needed for thrift
 RUN apt-get install -y libboost-dev libboost-test-dev libboost-program-options-dev libevent-dev automake libtool flex bison pkg-config g++ libssl-dev 
