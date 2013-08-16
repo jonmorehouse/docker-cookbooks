@@ -22,6 +22,8 @@ RUN cd /tmp/thrift-0.9.0 && ./configure && make && make install
 # Now go ahead and clone the tool
 RUN git clone http://github.com/erans/pysnowflake /src/pysnowflake
 
+RUN pip install thrift
+
 ENTRYPOINT ["/usr/bin/python"]
 CMD ["/src/pysnowflake/src/pysnowflake.py"]
 
