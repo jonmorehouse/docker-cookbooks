@@ -25,6 +25,6 @@ RUN git clone http://github.com/erans/pysnowflake /src/pysnowflake
 RUN pip install thrift
 
 ENTRYPOINT ["/usr/bin/python"]
-CMD ["/src/pysnowflake/src/pysnowflake.py"]
+CMD ["/src/pysnowflake/src/pysnowflake.py", "1", "1"]
 
 
