@@ -10,6 +10,15 @@ RUN apt-get install -y libboost-dev libboost-test-dev libboost-program-options-d
 # initialize some python specific tools and ensure that they are all installed,
 RUN apt-get install -y python-pip python-dev build-essential
 
+# now lets download the thrift stable release
+RUN wget --output-document=/tmp/thrift.tar.gz http://apache.mesi.com.ar/thrift/0.9.0/thrift-0.9.0.tar.gz
+
+# now untart the file that we grabbed 
+RUN cd /tmp && tar -xvzf thrift.tar.gz
+
+# now configure, make and install thrift 
+RUN cd /tmp/thrift-0.9.0 && ./configure && make && make install 
+
 # Now go ahead and clone the tool
 RUN git clone http://github.com/erans/pysnowflake /src/pysnowflake
 
